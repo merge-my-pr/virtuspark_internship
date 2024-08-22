@@ -984,7 +984,7 @@ section,
 
 .speakers .member .member-info {
   position: absolute;
-  padding: 25px 0;
+  padding: 20px 0 "center";
   inset: auto 0 -44px 0;
   background: rgba(0, 0, 0, 0.6);
   transition: 0.4s;
@@ -992,9 +992,9 @@ section,
 
 .speakers .member .member-info-content h4 {
   color: var(--contrast-color);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 4px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .speakers .member .member-info-content h4 a {
@@ -1008,7 +1008,7 @@ section,
 .speakers .member .member-info-content span {
   font-style: italic;
   display: block;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .speakers .member .social {
