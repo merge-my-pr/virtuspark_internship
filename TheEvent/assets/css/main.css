@@ -979,11 +979,12 @@ section,
 .speakers .member {
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
+
 .speakers .member .member-info {
-  position: absolute;
+  position: absolute ;
   padding: 20px 0 "center";
   inset: auto 0 -44px 0;
   background: rgba(0, 0, 0, 0.6);
