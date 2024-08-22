@@ -77,7 +77,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn d-none d-sm-block" href="#buy-tickets">Buy Tickets</a>
+      <a class="cta-btn d-none d-sm-block" href="#book-event">Book event</a>
 
     </div>
   </header>
@@ -802,92 +802,191 @@
 
     </section><!-- /Faq Section -->
 
-    <!-- Buy Tickets Section -->
-    <section id="book-event" class="book-event section light-background">
+<!-- Buy Tickets Section -->
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Book Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .section {
+      padding: 60px 0;
+      background-color: #f9f9f9;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      color: #333;
+    }
+    .section-title p {
+      color: #666;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .ticket-form {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 600px;
+      margin: 8 auto;
+    }
+    .form-step {
+      display: none;
+    }
+    .form-step.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-group input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    .form-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .form-row .form-group {
+      flex: 1;
+    }
+    .button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body> 
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Book Event</h2>
-        <p>Fill out the form below to purchase your ticket.</p>
-      </div><!-- End Section Title -->
-      <!--ticket purchase form-->
-      <div class="container">
-        <form action="#" method="post" class="ticket-form">
-        <div class="row gy-4">
-          <style>
-            .form-step {
-                display: none;
-                margin-bottom: 15px;
-            }
-            .form-step.active {
-                display: block;
-            }
-            .button {
-                margin-top: 10px;
-                padding: 5px 10px;
-                background-color: #14e709;
-                color: rgb(245, 150, 8);
-                border: none;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-    
-    <form id="myForm">
+  <!-- Buy Tickets Section -->
+  <section id="book-event" class="book-event section">
 
-          <!--Name field-->
-          <div class="col-lg-6">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Section Title -->
+    <div class="container section-title">
+      <h2>Book Event</h2>
+      <p>Fill out the form below to purchase your ticket.</p>
+    </div><!-- End Section Title -->
+
+    <!-- Ticket Purchase Form -->
+    <div class="container">
+      <form id="ticket-form" class="ticket-form">
+
+        <!-- Step 1: Personal Information -->
+        <div id="step1" class="form-step active">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
           </div>
-  
-          <!-- Email Field -->
-          <div class="col-lg-6">
+          <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
           </div>
-          <!--Phone Number-->
-          <div class="col-lg-6">
-            <label for="Phone">Phone:</label>
-            <input type="phone" id="phone" name="Phone" required>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
           </div>
-  
-          <!-- Checkbox -->
-          <div class="col-12">
+          <div class="form-group">
             <label>
               <input type="checkbox" id="terms" name="terms" required>
               I agree to the <a href="#">terms and conditions</a>
             </label>
           </div>
-
-<script>
-  let currentStep = 1;
-
-  function nextStep() {
-      const steps = document.querySelectorAll('.form-step');
-      steps.forEach(step => step.classList.remove('active'));
-
-      currentStep++;
-      if (currentStep > steps.length) {
-          // Optionally, handle form submission or completion here
-          alert('Form completed!');
-          return;
-      }
-
-      document.getElementById(`step${currentStep}`).classList.add('active');
-  }
-</script>
-  
-          <!-- Submit Button -->
-          <div class="col-12 text-center">
-            <button type="submit" class="buy-btn">Submit</button>
+          <div class="text-center">
+            <button type="button" class="button" onclick="nextStep()">Next</button>
           </div>
         </div>
+
+        <!-- Step 2: Payment Information (for example) -->
+        <div id="step2" class="form-step">
+          <!-- Add your payment fields here -->
+          <p>Payment information goes here.</p>
+          <div class="text-center">
+            <button type="button" class="button" onclick="previousStep()">Previous</button>
+            <button type="submit" class="button">Submit</button>
+          </div>
+        </div>
+
       </form>
     </div><!-- End Ticket Purchase Form -->
-    </section><!-- /Buy Tickets Section -->
 
+  </section>
+
+  <script>
+    let currentStep = 1;
+
+    function showStep(step) {
+      document.querySelectorAll('.form-step').forEach(stepElement => stepElement.classList.remove('active'));
+      document.getElementById(`step${step}`).classList.add('active');
+    }
+
+    function nextStep() {
+      currentStep++;
+      if (currentStep > document.querySelectorAll('.form-step').length) {
+        alert('Form completed!');
+        return;
+      }
+      showStep(currentStep);
+    }
+
+    function previousStep() {
+      currentStep--;
+      if (currentStep < 1) {
+        currentStep = 1;
+        return;
+      }
+      showStep(currentStep);
+    }
+
+    // Initialize the form
+    showStep(currentStep);
+  </script>
+  
+<!-- </body>
+</html> -->
+
+<!-- /Buy Tickets Section -->
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
