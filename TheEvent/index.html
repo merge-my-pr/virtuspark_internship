@@ -37,6 +37,43 @@
 </head>
 
 <body class="index-page">
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Check if the 'mess' parameter is present
+    var mess = '';
+
+    if (mess) {
+      // Display the 'mess' value in an alert box
+      alert(mess);
+    }
+  });
+
+
+  function toggle() {
+    document.getElementById("popup-background").style.display = "block";
+  }
+  function toggleclose() {
+    document.getElementById("popup-background").style.display = "none";
+  }
+  function aboutscrool() {
+    const additionalContent = document.getElementById("additional-content");
+    if (additionalContent) {
+      console.log(additionalContent.style.display === "none")
+      additionalContent.style.display =
+        additionalContent.style.display === "none" ? "block" : "none";
+    }
+    document.getElementById("additional-content").scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  
+
+</script>
+<script src='static/assets/vendor/popup/regpopup.js'></script>
+
+</head>
+
+<body>
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -49,6 +86,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
+          <!-- <li><a class="nav-link scrollto " href="/">Home</a></li> -->
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#speakers">Speakers</a></li>
           <li><a href="#schedule">Schedule</a></li>
@@ -77,14 +115,33 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn d-none d-sm-block" href="#book-event">Book event</a>
+       <a class="cta-btn d-none d-sm-block" href="#explore">Explore</a>
 
     </div>
   </header>
 
   <main class="main">
-
-    <!-- Hero Section -->
+    <script>
+      function togglePopup() {
+        const popup = document.getElementById('popup-background');
+        // Toggle display of the popup
+        if (popup.style.display === 'none' || popup.style.display === '') {
+          popup.style.display = 'flex'; // Use flex to center the content
+        } else {
+          popup.style.display = 'none';
+        }
+      }
+    
+      function handleSubmit(event, url) {
+        event.preventDefault();
+        // Handle form submission (e.g., AJAX call) here
+        console.log("Form submitted to:", url);
+        // Optionally hide the popup after form submission
+        togglePopup();
+      }
+    </script>
+    
+    <!--hero section-->
     <section id="hero" class="hero section dark-background">
 
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
@@ -119,7 +176,11 @@
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </section>
+<!--end hero-->
+
+
+
 
     <!-- Speakers Section -->
     <section id="speakers" class="speakers section">
@@ -801,6 +862,158 @@
       </div>
 
     </section><!-- /Faq Section -->
+    <!-- ======= explore Section ======= -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Explore</h2>
+      <p>"Navigate Your Career Journey with Confidence and Clarity!</p>
+    </div>
+     
+<section id="explore" class="d-flex align-items-center" style="display: flex; flex-direction: column;">
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <div class="row" style="margin-top: 100px;">
+      <div class="col-xl-6">
+        <!-- <div class="container section-title" data-aos="fade-up">
+          <h1>Welcome</h1>
+          
+          <h2>We decode your needs, craft your success</h2> -->
+
+        <h2 style="line-height: 60px;">Welcome,
+          <br>We decode your needs, craft your success<br><div>"Transform Knowledge into Career Success. Discover Your Path to Professional Growth!"</div>
+            Find the Perfect Career Path Today!</h2>
+        <a class="btn-get-started scrollto" onclick="togglePopup()" style="cursor: pointer;"> <button type="Explore">Explore</button></a>
+      </div>
+    </div>
+  </div>
+</section><!-- End explore -->
+<!-- Welcome Popup -->
+<section id="popup-background" class="welcome-popup" style="display: none;">
+  <div id="popup" class="popup-content">
+    <div class="popup-header">
+      <!-- Close button positioned on the left -->
+      <!-- <i class="fas fa-times exit-icon" onclick="togglePopup()" style="cursor: pointer;"><button>X</button></i> -->
+      <i class="fas fa-times exit-icon" onclick="togglePopup()" style="float: right; margin-right: 10px; border-top-right-radius: 0%;"><button>X</button></i>
+
+      <div class="popup-header-title">
+        <h1 style="font-size: 25px; font-weight: bold; padding: 10px; color: rgb(3, 3, 108);">Welcome</h1>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div class="explore-quotes">
+        <p>Provide your details below to get started:</p>
+      </div>
+      <div class="eform-area">
+        <div class="eform-inner">
+          <form method="POST" class="welcome-form" action="/submit_form" onsubmit="handleSubmit(event, '/submit_form')">
+            <div class="eform-group">
+              <input type="text" style="width:100%" class="eform-control" placeholder="First Name" name="first_name" required />
+            </div>
+            <br>
+            <div class="eform-group">
+              <input type="text" style="width:100%" class="eform-control" placeholder="Last Name" name="last_name" required />
+            </div>
+            <br>
+            <div class="eform-group">
+              <input type="tel" style="width:100%" class="eform-control" id="phone_number" name="phone_number" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" maxlength="10" required />
+            </div>
+            <br>
+            <div class="eform-group">
+              <input type="email" style="width:100%" class="eform-control" placeholder="Email" name="email" required>
+            </div>
+
+            <div class="popup-message"></div>
+            <br>
+            <button type="submit">Submit</button>
+            <br><br>
+            <span>By proceeding you agree to the
+              <a href="/termofservice">Terms</a> and <a href="/privacypolicy">Privacy Policy.</a>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="popup-background" class="welcome-popup" style="display: none;">
+  <div id="popup" class="popup-content">
+    <i class="fas fa-times exit-icon"onclick="togglePopup()" style="border-top-left-radius: 0% ;"><button>X</button></i>
+    <div style="display: flex; flex-direction: column;">
+      <h1 style="font-size: 25px; font-weight: bold; padding: 10px; color: rgb(17, 9, 114);">Welcome</h1>
+      <div class="explore-quotes">
+        <p>Provide your details below to get started:</p>
+      </div>
+      <div class="eform-area">
+        <div class="eform-inner">
+          <form method="POST" class="welcome-form" action="/submit_form" onsubmit="handleSubmit(event, '/submit_form')">
+            <div class="eform-group">
+              <input type="text" style="width:100%" class="eform-control" placeholder="First Name" name="first_name" required />
+            </div>
+            <br>
+            <div class="eform-group">
+              <input type="text" style="width:100%" class="eform-control" placeholder="Last Name" name="last_name" required />
+            </div>
+            <br>
+            <div class="eform-group">
+              <input type="tel" style="width:100%" class="eform-control" id="phone_number" name="phone_number" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" maxlength="10" required />
+            </div>
+            <br>
+            <div class="eform-group">
+              <input type="email" style="width:100%" class="eform-control" placeholder="Email" name="email" required>
+            </div>
+
+            <div class="popup-message"></div>
+            <br>
+           <button type="submit">submit</button></button><br><br>
+            <span> By proceeding you agree to the
+              <a href="/termofservice">Terms</a> and <a href="/privacypolicy">Privacy
+                Policy.</a>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!--explore section-->
+<section id="popup-background" class="Welcomeexplore" style="display: none;">
+  <div id="popup" class="Welcomeexplore">
+    <i class="ri-close-circle-fill" type="button" style="float: left; cursor: pointer; font-size: 24px;" onclick="togglePopup()"></i>
+    <div style="display: flex;flex-direction: column;" class="Welcomeexplore">
+      <h1 style="font-size: 25px; font-weight: bold; padding: 10px; color: rgb(38, 2, 108);">Welcome</h1>
+      <div class="explore-quotes">
+        <p>Provide your details below to get started:</p>
+      </div>
+      <div class="eform-area">
+        <div class="eform-inner">
+          <i class="fas fa-times close-icon" onclick="togglePopup()"><button>x</button></i>
+          <form method="POST" class="Welcomeexplore" action="/submit_form" onsubmit="handleSubmit(event, '/submit_form')">
+            
+            <div class="eform-group">
+              <input type="text" class="eform-control" placeholder="First Name" name="first_name" required />
+            </div>
+            <div class="eform-group">
+              <input type="text" class="eform-control" placeholder="Last Name" name="last_name" required />
+            </div>
+            <div class="eform-group">
+              <input type="tel" class="eform-control" id="phone_number" name="phone_number" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" maxlength="10" required />
+            </div>
+            <div class="eform-group">
+              <input type="email" class="eform-control" placeholder="Email" name="email" required>
+            </div>
+            <div class="popup-message"></div>
+            <button type="submit" class="btn form-submit">Submit</button><br>
+            <span> By proceeding you agree to the
+              <a href="/termofservice">Terms</a> and <a href="/privacypolicy">Privacy
+                Policy.</a>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end explore section-->
 
 <!-- Buy Tickets Section -->
  <!-- <!DOCTYPE html>
@@ -808,7 +1021,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <title>Book Event</title>
+  <!-- <title>Book Event</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -898,21 +1111,21 @@
 </head>
 <body> 
 
-  <!-- Buy Tickets Section -->
-  <section id="book-event" class="book-event section">
+  Buy Tickets Section -->
+  <!-- <section id="book-event" class="book-event section"> -->
 
     <!-- Section Title -->
-    <div class="container section-title">
+    <!-- <div class="container section-title">
       <h2>Book Event</h2>
       <p>Fill out the form below to purchase your ticket.</p>
-    </div><!-- End Section Title -->
+    </div> End Section Title -->
 
     <!-- Ticket Purchase Form -->
-    <div class="container">
-      <form id="ticket-form" class="ticket-form">
+    <!-- <div class="container">
+      <form id="ticket-form" class="ticket-form"> -->
 
         <!-- Step 1: Personal Information -->
-        <div id="step1" class="form-step active">
+        <!-- <div id="step1" class="form-step active">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name:</label>
@@ -927,19 +1140,19 @@
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone" required>
           </div>
-          <div class="form-group">
+          <div class="form-group"> --> 
             <!-- <label>
               <p><input type="checkbox" id="terms" name="terms" required>I agree to the <a href="#">terms and conditions</a></p>
             </label> -->
-          </div>
+          <!-- </div>
           <div class="text-center">
             <button type="button" class="button" onclick="nextStep()">Next</button>
           </div>
-        </div>
+        </div> -->
 
         <!-- Step 2: Payment Information (for example) -->
-        <div id="step2" class="form-step">
-          <!-- Add your payment fields here -->
+        <!-- <div id="step2" class="form-step">
+         
           <p>  Your Payment information goes here. click here</p>
           <div class="text-center">
             <button type="button" class="button" onclick="previousStep()">Previous</button>
@@ -948,7 +1161,7 @@
         </div>
 
       </form>
-    </div><!-- End Ticket Purchase Form -->
+    </div> End Ticket Purchase Form 
 
   </section>
 
@@ -976,12 +1189,12 @@
         return;
       }
       showStep(currentStep);
-    }
-
+    } -->
+<!-- 
     // Initialize the form
     showStep(currentStep);
-  </script>
-  
+  </script> -->
+   
 <!-- </body>
 </html> -->
 

@@ -67,6 +67,41 @@
       preloader.remove();
     });
   }
+  /**
+   * explore buttom
+   */
+ 
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Check if the 'mess' parameter is present
+    var mess = '';
+
+    if (mess) {
+      // Display the 'mess' value in an alert box
+      alert(mess);
+    }
+  });
+
+
+  function toggle() {
+    document.getElementById("popup-background").style.display = "block";
+  }
+  function toggleclose() {
+    document.getElementById("popup-background").style.display = "none";
+  }
+  function aboutscrool() {
+    const additionalContent = document.getElementById("additional-content");
+    if (additionalContent) {
+      console.log(additionalContent.style.display === "none")
+      additionalContent.style.display =
+        additionalContent.style.display === "none" ? "block" : "none";
+    }
+    document.getElementById("additional-content").scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  
+
+
 
   /**
    * Scroll top button
@@ -136,6 +171,35 @@
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    const exploreBtn = document.getElementById('explore-btn');
+    const popupBackground = document.getElementById('popup-background');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Function to toggle the popup visibility
+    function togglePopup() {
+        const isDisplayed = popupBackground.style.display === 'flex';
+        popupBackground.style.display = isDisplayed ? 'none' : 'flex';
+    }
+
+    // Show the popup when the explore button is clicked
+    exploreBtn.addEventListener('click', () => {
+        togglePopup();
+    });
+
+    // Hide the popup when the close button is clicked
+    closeBtn.addEventListener('click', () => {
+        togglePopup();
+    });
+
+    // Hide the popup when clicking outside the popup content
+    window.addEventListener('click', (event) => {
+        if (event.target === popupBackground) {
+            togglePopup();
+        }
+    });
+});
+
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
