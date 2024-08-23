@@ -974,6 +974,9 @@ section,
 --------------------------------------------------------------*/
 .speakers {
   --default-color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Three columns */
+  gap: 0px; /* Adjust the gap between images as needed */
 }
 
 .speakers .member {
@@ -985,7 +988,7 @@ section,
 
 .speakers .member .member-info {
   position: absolute ;
-  padding: 20px 0 "center";
+  padding: 10px 0 "center";
   inset: auto 0 -44px 0;
   background: rgba(0, 0, 0, 0.6);
   transition: 0.4s;
@@ -1035,6 +1038,20 @@ section,
 
 .speakers .member:hover .member-info {
   bottom: 0;
+}
+.speakers .container {
+  display: flex;
+  justify-content: center; /* Center the entire row */
+  align-items: center; /* Center content vertically if needed */
+}
+
+.speakers .member {
+  margin: 10px auto; /* Adjust the margin to decrease edge border size */
+  max-width: 87%; /* Decrease the size of each member container */
+}
+
+.row.justify-content-center {
+  justify-content: "100%"; /* Center the columns within the row */
 }
 
 /*--------------------------------------------------------------
