@@ -31,6 +31,7 @@
 
 #explore .btn-get-started:hover {
   background-color: #f7f7f7; /* Light gray background color on hover */
+  padding:7px 0 ;
   color: #032d58; /* Blue text color on hover */
 }
 
@@ -49,9 +50,9 @@ header {
 
  button {
   background-color: #100454;  
-  border: none;
+  border: 50%;
   color: rgb(248, 248, 248);
-  padding: 10px 20px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
