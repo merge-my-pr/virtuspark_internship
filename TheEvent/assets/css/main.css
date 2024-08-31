@@ -975,7 +975,7 @@ section,
 .speakers {
   --default-color: #ffffff;
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* Three columns */
+  grid-template-columns: repeat(1, 1fr); /* One column for now; change to 'repeat(3, 1fr)' for three columns */
   gap: 0px; /* Adjust the gap between images as needed */
 }
 
@@ -983,15 +983,19 @@ section,
   text-align: center;
   position: relative;
   overflow: hidden; 
+  border-radius: 15px; /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+  margin: 20px auto; /* Adjust the margin to decrease edge border size */
+  max-width: 87%; /* Decrease the size of each member container */
 }
 
-
 .speakers .member .member-info {
-  position: absolute ;
-  padding: 18px 0 "center";
-  inset: auto 0 -55px 0;
+  position: absolute;
+  padding: 22px 0;
+  inset: auto 0 -100px 0;
   background: rgba(0, 0, 0, 0.6);
   transition: 0.4s;
+  border-radius: 0 0 15px 15px; /* Round the bottom corners of the info box */
 }
 
 .speakers .member .member-info-content h4 {
@@ -1033,26 +1037,23 @@ section,
 
 .speakers .member .social i {
   font-size: 18px;
-  margin: 0 2px;
+  margin: 0 4px;
 }
 
 .speakers .member:hover .member-info {
   bottom: 0;
 }
+
 .speakers .container {
   display: flex;
   justify-content: center; /* Center the entire row */
   align-items: center; /* Center content vertically if needed */
 }
 
-.speakers .member {
-  margin: 10px auto; /* Adjust the margin to decrease edge border size */
-  max-width: 87%; /* Decrease the size of each member container */
+.row.justify-content-center {
+  justify-content: 100%; /* Correct syntax to center the columns within the row */
 }
 
-.row.justify-content-center {
-  justify-content: "100%"; /* Center the columns within the row */
-}
 
 /*--------------------------------------------------------------
 # Schedule Section
@@ -1705,4 +1706,4 @@ section,
 --------------------------------------------------------------*/
 /* .starter-section { */
   /* Add your styles here */
-}
+/* } */
