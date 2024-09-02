@@ -236,8 +236,9 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  height: 100px;
   margin-right: 8px;
+  width: 120px;
 }
 
 .header .logo h1 {
@@ -909,7 +910,7 @@ section,
 }
 
 .hero h2 span {
-  color: var(--accent-color);
+  color: #fffff;
 }
 
 .hero p {
