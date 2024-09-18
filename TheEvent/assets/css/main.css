@@ -12,8 +12,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 #explore {
-  background-color: #032d58; /* Blue background color */
-  padding: 50px 0; /* Add some padding to the section */
+  background-color: #09053a;
   color: #ffffff; /* White text color */
 }
 
@@ -22,7 +21,7 @@
 }
 
 #explore .btn-get-started {
-  /* background-color: #ffffff; White background color for button */
+   background-color: #09053a; /*White background color for button  */
   color: #032d58; /* Blue text color for button */
   border: none; /* Remove button border */
   padding: 10px 20px; /* Add some padding to the button */
@@ -36,10 +35,6 @@
 }
 
 
-
- nh  body {
-  font-family: Arial, sans-serif;
-}
 
 header {
   background-color: #39335a;
