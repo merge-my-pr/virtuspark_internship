@@ -11,18 +11,183 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
-:root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Raleway",  sans-serif;
+#explore {
+  background-color: #09053a;
+  color: #ffffff; /* White text color */
 }
+
+#explore h2, #explore h3 {
+  color: #ffffff; /* White text color for headings */
+}
+
+#explore .btn-get-started {
+   background-color: #09053a; /*White background color for button  */
+  color: #032d58; /* Blue text color for button */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add some padding to the button */
+  cursor: pointer; /* Change cursor shape on hover */
+}
+
+#explore .btn-get-started:hover {
+  background-color: #f7f7f7; /* Light gray background color on hover */
+  padding:7px 0 ;
+  color: #032d58; /* Blue text color on hover */
+}
+
+
+
+header {
+  background-color: #39335a;
+  color: rgb(212, 169, 26);
+  padding: 1rem;
+  text-align: center;
+} 
+
+ button {
+  background-color: #100454;  
+  border: 50%;
+  color: rgb(248, 248, 248);
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+} 
+
+/* Popup Background 
+.welcome-popup {
+  
+  /* display: none; Hidden by default */
+  /* position: fixed; Fixed position to cover the entire screen */
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  /* background-color: rgba(251, 251, 251, 0.5); Semi-transparent background */
+  /* z-index: 1000; Ensure it's on top */
+  /* justify-content: center;
+  align-items: center; */
+/* } */
+#explore h2 {
+  margin-top:20; /* Remove the default top margin */
+  margin-bottom: 40px; /* Add a small bottom margin */
+}
+
+#explore h3 {
+  margin-top:10px; /* Remove the default top margin */
+}
+
+/* Popup Content 
+.popup-content {
+  background-color:white;
+  padding: 100px;
+  border-radius: 10px;
+  width: 300%;
+  max-width: 700px;
+  position: relative;
+}*/
+  #explore h2 {
+  margin-top: 10;
+  margin-bottom:40px;
+  font-size: larger;
+}
+
+#explore h3 {
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.section-title h2, .section-title p {
+  margin-bottom:0px; /* Reduce the bottom margin */
+  font-size: larger;
+}
+
+#explore .row {
+  margin-top: 0px; /* Reduce the top margin */
+  font-size: larger;
+}
+
+#explore .col-xl-6 {
+  padding-top: 60; /* Remove the top padding */
+  font-size: larger;
+}
+
+/* Close Button 
+.exit-icon {
+  position : fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+/* } */
+/* Popup Background */
+.welcome-popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position to cover the entire screen */
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it's on top */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup Content */
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Close Button */
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: rgb(50, 50, 129);
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
+z-index: 1001; /* Ensure it's on top */
+}
+
+/* Optional: Style for form elements and buttons */
+.eform-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn.form-submit {
+  background-color: #4CAF50;
+  color: blue;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #2f3138; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0e1b4d; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #f82249; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #0e1b4d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -34,7 +199,7 @@
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #f82249; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #0e1b4d; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
